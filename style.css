@@ -76,11 +76,13 @@
       nav a {
         color: var(--muted);
         text-decoration: none;
-        transition: color 0.25s ease;
+        transition: color 0.25s ease, opacity 0.25s ease;
       }
 
-      nav a:hover {
+      nav a:hover,
+      nav a.active-link {
         color: var(--text);
+        opacity: 1;
       }
 
       .hero {
