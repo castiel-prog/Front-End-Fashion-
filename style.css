@@ -1,0 +1,294 @@
+:root {
+        --bg: #06080b;
+        --panel: rgba(255, 255, 255, 0.06);
+        --panel-strong: rgba(255, 255, 255, 0.1);
+        --text: #f4efe8;
+        --muted: #a7a2a0;
+        --accent: #d67b3a;
+        --accent-2: #ffb36b;
+        --accent-3: #6c7cff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(214, 123, 58, 0.16), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(108, 124, 255, 0.16), transparent 26%),
+          var(--bg);
+        min-height: 100vh;
+      }
+
+      .page {
+        width: min(1240px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 24px 0 60px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      .logo-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(145deg, var(--accent), var(--accent-2));
+        box-shadow: 0 10px 24px rgba(214, 123, 58, 0.25);
+      }
+
+      .logo-mark svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .brand-name {
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 30px;
+        align-items: center;
+        padding: 20px 0 36px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 4.1vw, 3.5rem);
+        line-height: 1.08;
+        margin-bottom: 14px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        line-height: 1.8;
+        max-width: 560px;
+        margin-bottom: 22px;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 20px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .btn-primary {
+        color: white;
+        background: linear-gradient(120deg, var(--accent), var(--accent-2));
+        box-shadow: 0 12px 28px rgba(214, 123, 58, 0.24);
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .hero-card {
+        border-radius: 28px;
+        padding: 16px;
+        background: linear-gradient(140deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      }
+
+      .hero-card img {
+        width: 100%;
+        height: 440px;
+        object-fit: cover;
+        border-radius: 20px;
+        display: block;
+      }
+
+      .hero-card .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 4px 2px;
+      }
+
+      .pill {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.1);
+        color: #ffd7b9;
+        font-size: 0.8rem;
+      }
+
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0 16px;
+      }
+
+      .section-title h2 {
+        font-size: 1.15rem;
+      }
+
+      .section-title a {
+        color: var(--accent-2);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      .builder-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .item-card {
+        background: var(--panel);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 20px;
+        padding: 16px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .item-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      }
+
+      .item-card .thumb {
+        height: 180px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .item-card h3 {
+        margin-bottom: 6px;
+      }
+
+      .item-card p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .item-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .mini-btn {
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.12);
+        color: var(--text);
+        background: rgba(255,255,255,0.05);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: background 0.25s ease;
+      }
+
+      .mini-btn:hover {
+        background: rgba(255,255,255,0.12);
+      }
+
+      .cta-banner {
+        margin-top: 24px;
+        border-radius: 24px;
+        padding: 22px;
+        background: linear-gradient(120deg, rgba(214,123,58,0.2), rgba(108,124,255,0.15));
+        border: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .cta-banner h3 {
+        margin-bottom: 6px;
+      }
+
+      .cta-banner p {
+        color: var(--muted);
+      }
+
+      @media (max-width: 940px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .builder-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .cta-banner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+    }
